@@ -1,0 +1,76 @@
+/* frontend/src/index.css */
+
+:root {
+  --color-bg: #f5f5f5;
+  --color-text: #222;
+  --color-primary: #0077ff;
+  --color-dark-bg: #121212;
+  --color-dark-text: #eee;
+  --color-dark-primary: #3399ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-primary);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #005ccc;
+}
+
+.dark button {
+  background-color: var(--color-dark-primary);
+}
+
+input,
+select,
+textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.container {
+  padding: 16px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dark .card {
+  background-color: #1f1f1f;
+}

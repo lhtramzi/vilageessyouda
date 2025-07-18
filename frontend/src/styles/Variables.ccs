@@ -1,0 +1,32 @@
+/* frontend/src/styles/variables.css */
+
+/* الألوان الأساسية */
+:root {
+  --color-background : #f4f4f4 ;
+  --color-background-dark : #1e1e1e ;
+
+  --color-text : #222 ;
+  --color-text-light : #eee ;
+
+  --color-primary : #0077cc ;
+  --color-primary-dark : #3399ff ;
+
+  --color-accent : #ff6600 ;
+  --color-danger : #d9534f ;
+  --color-success : #5cb85c ;
+
+  --color-border : #ccc ;
+  --color-border-dark : #444 ;
+
+  --font-main : ‘Segoe UI’, sans-serif ;
+
+  --radius : 12px ;
+  --transition : 0.3s ease ;
+}
+
+/* الوضع الليلي */
+[data-theme=’dark’] {
+  --color-background : #121212 ;
+  --color-text : #f0f0f0 ;
+  --color-border : #333 ;
+}
