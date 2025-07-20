@@ -1,11 +1,17 @@
+# استخدام نسخة رسمية خفيفة من Node.js
 FROM node:18-alpine
 
+# تعيين مجلد العمل داخل الحاوية
 WORKDIR /app
 
-COPY . .
+# نسخ الملفات من مجلد backend إلى داخل الحاوية
+COPY backend/ .
 
+# تثبيت التبعيات
 RUN npm install
 
-EXPOSE 5000
+# تعيين المنفذ الافتراضي (Render يستخدم PORT من env)
+EXPOSE 3001
 
-CMD ["node", "index.js"]
+# أمر تشغيل الخادم
+CMD ["node", "server.js"]
