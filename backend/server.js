@@ -1,30 +1,30 @@
-Require(‘dotenv’).config() ;
-Const http = require(‘http’) ;
-Const WebSocket = require(‘ws’) ;
-Const { v4 : uuidv4 } = require(‘uuid’) ;
-Const { handleSocketConnection } = require(‘./rooms’) ;
-Const logger = require(‘./logger’) ;
+require('dotenv').config();
+const http = require('http');
+const WebSocket = require('ws');
+const { v4: uuidv4 } = require('uuid');
+const { handleSocketConnection } = require('./rooms');
+const logger = require('./logger');
 
-Const PORT = process.env.PORT || 3001 ;
+const PORT = process.env.PORT || 3001;
 
-Const server = http.createServer((req, res) => {
-  Res.writeHead(200) ;
-  Res.end(« Villaj Sayouda WebSocket server is running. ») ;
-}) ;
+const server = http.createServer((req, res) => {
+  res.writeHead(200);
+  res.end('Villaj Sayouda WebSocket server is running.');
+});
 
-Const wss = new WebSocket.Server({ server }) ;
+const wss = new WebSocket.Server({ server });
 
-Wss.on(‘connection’, (ws) => {
-  Ws.id = uuidv4() ; // Unique ID for each socket
-  Logger.info(`Client connected : ${ws.id}`) ;
+wss.on('connection', (ws) => {
+  ws.id = uuidv4(); // Unique ID for each socket
+  logger.info(`Client connected: ${ws.id}`);
 
-  Ws.on(‘close’, () => {
-    Logger.info(`Client disconnected : ${ws.id}`) ;
-  }) ;
+  ws.on('close', () => {
+    logger.info(`Client disconnected: ${ws.id}`);
+  });
 
-  handleSocketConnection(ws, wss) ;
-}) ;
+  handleSocketConnection(ws, wss);
+});
 
-Server.listen(PORT, () => {
-  Logger.info(`Server listening on port ${PORT}`) ;
-}) ;
+server.listen(PORT, () => {
+  logger.info(`Server listening on port ${PORT}`);
+});
